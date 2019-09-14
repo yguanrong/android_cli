@@ -1,6 +1,8 @@
 package com.example.guanrong.android_cli.service;
 
-import com.example.guanrong.android_cli.utils.HttpUtil;
+import android.annotation.SuppressLint;
+
+import com.example.guanrong.android_cli.common.utils.HttpUtil;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,7 +14,10 @@ import java.util.Map;
 
 public class DBUtil {
 
-    private static String api= "http://192.168.0.101:8088";
+    public static String api= "http://192.168.0.101:8088";
+
+    @SuppressLint("HardwareIds")
+    public static final String deviceId = android.os.Build.SERIAL;
 
     public static String login(String userName, String password,String deviceId){
 

@@ -6,13 +6,12 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
-import android.view.KeyEvent;
 import android.widget.Toast;
 
 import com.example.guanrong.android_cli.MainActivity;
 import com.example.guanrong.android_cli.R;
 import com.example.guanrong.android_cli.service.DBUtil;
-import com.example.guanrong.android_cli.utils.ThreadPool;
+import com.example.guanrong.android_cli.common.utils.ThreadPool;
 
 /**
  * Created by GuanRong on 2019/9/14.
@@ -21,7 +20,7 @@ import com.example.guanrong.android_cli.utils.ThreadPool;
 
 public class PreOpenActivity extends AppCompatActivity {
 
-    private long backTime;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,12 +28,10 @@ public class PreOpenActivity extends AppCompatActivity {
         init();
     }
     private void init(){
-        backTime = 1000;
-        @SuppressLint("HardwareIds")
-        final String deviceId = android.os.Build.SERIAL;
+
         ThreadPool.getInstance().execute(new Thread(
                 ()->{
-                    String string = DBUtil.queryDeviceFromRedis(deviceId);
+                    String string = DBUtil.queryDeviceFromRedis(DBUtil.deviceId);
                     handlerSendMsg(1001,string);
                 }));
     }
