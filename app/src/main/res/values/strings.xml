@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">android脚手架</string>
+    <string name="title">android脚手架</string>
+    <string name="user">用户：</string>
+    <string name="user_hint">请输入用户名</string>
+    <string name="password">密码：</string>
+    <string name="password_hint">请输入密码</string>
+    <string name="login">登 录</string>
+    <string name="forget_password">忘记密码？</string>
+    <string name="todo">TODO</string>
+</resources>
