@@ -14,7 +14,7 @@ import java.util.Map;
 
 public class DBUtil {
 
-    public static String api= "http://192.168.0.101:8088";
+    public static String api= "http://101.132.137.213:8088";
 
     @SuppressLint("HardwareIds")
     public static final String deviceId = android.os.Build.SERIAL;
